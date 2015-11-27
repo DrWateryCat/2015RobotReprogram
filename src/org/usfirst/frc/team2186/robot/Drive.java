@@ -1,9 +1,9 @@
 package org.usfirst.frc.team2186.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Talon;
+
+import org.usfirst.frc.team2186.robot.Input.JoystickData;
 
 public class Drive {
 	Talon left;
@@ -36,8 +36,9 @@ public class Drive {
 		right_side.set(x);
 	}
 	
-	public void update(Joystick j){
-		update(j.getAxis(AxisType.kX), j.getAxis(AxisType.kY), j.getAxis(AxisType.kZ));
+	public void update(){
+		JoystickData data = Input.getInstance().get();
+		update(data.x, data.y, data.z);
 	}
 	
 	//Singleton

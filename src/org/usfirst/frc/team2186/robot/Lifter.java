@@ -1,23 +1,18 @@
 package org.usfirst.frc.team2186.robot;
 
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Joystick;
+import org.usfirst.frc.team2186.robot.Input.JoystickData;
 
 public class Lifter {
-	Talon lifter;
+	private Talon lifter;
 	
 	private Lifter() {
 		lifter = new Talon(RobotMap.LIFTER);
 	}
 	
-	public void update(Joystick j) {
-		if(j.getRawButton(1) && !j.getRawButton(3)){
-			update(-1);
-		} else if(!j.getRawButton(1) && j.getRawButton(3)){
-			update(1);
-		} else {
-			update(0);
-		}
+	public void update() {
+		JoystickData data = Input.getInstance().get();
+		update(data.lifter);
 	}
 	
 	public void update(double x) {

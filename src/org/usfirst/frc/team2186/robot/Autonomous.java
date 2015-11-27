@@ -3,8 +3,8 @@ package org.usfirst.frc.team2186.robot;
 import edu.wpi.first.wpilibj.Timer;
 
 public class Autonomous {
-	Drive drive;
-	Timer autoTimer;
+	private Drive drive;
+	private Timer autoTimer;
 	private Autonomous(){
 	}
 	//Call this in IterativeRobot.autonomousInit
@@ -21,6 +21,10 @@ public class Autonomous {
 		} else {
 			drive.update(0, 0, 0);
 		}
+	}
+	
+	public void stop() {
+		drive.update(0, 0, 0);
 	}
 	
 	private static Autonomous _instance = null;
