@@ -9,4 +9,5 @@ public final class RobotMap {
 	}
 	
 	public static final int LIFTER = 4; 
+	public static final int LIFTER_BACK = 5;
 }
