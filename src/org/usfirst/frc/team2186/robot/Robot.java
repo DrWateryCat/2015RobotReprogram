@@ -16,27 +16,25 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
 	
+	//Define singletons
 	Drive drive;
 	Lifter lifter;
 	Autonomous auto;
+	
+	//Init singletons
     public void robotInit() {
     	drive = Drive.getInstance();
     	lifter = Lifter.getInstance();
     	auto = Autonomous.getInstance();
     }
-    /*
-     * (non-Javadoc)
-     * @see edu.wpi.first.wpilibj.IterativeRobot#autonomousInit()
-     */
+    
+    //This is called once when the robot enters Autonomous Mode
     public void autonomousInit() {
     	auto.init();
     	
     }
     
-    /*
-     * (non-Javadoc)
-     * @see edu.wpi.first.wpilibj.IterativeRobot#autonomousPeriodic()
-     */
+    //This is called periodically while the robot is in Autnomous Mode
     public void autonomousPeriodic() {
     	auto.update();
     }

@@ -5,6 +5,9 @@ import edu.wpi.first.wpilibj.Talon;
 
 import org.usfirst.frc.team2186.robot.Input.JoystickData;
 
+//This class controls the drive train.
+//Not too much else to say
+
 public class Drive {
 	Talon left;
 	Talon right;
